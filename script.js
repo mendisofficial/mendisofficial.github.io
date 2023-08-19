@@ -1,7 +1,9 @@
-let tablinks = document.getElementsByClassName("tab-links");
-let tabcontents = document.getElementsByClassName("tab-contents");
+const tablinks = document.getElementsByClassName("tab-links");
+const tabcontents = document.getElementsByClassName("tab-contents");
 
-function opentab(tabname){
+const sidemenu = document.getElementById("sidemenu");
+
+function opentab(event, tabname){
     for(tablink of tablinks){
         tablink.classList.remove("active-link");
     }
@@ -10,4 +12,12 @@ function opentab(tabname){
     }
     event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
+}
+
+function openmenu(){
+    sidemenu.style.right = "0";
+}
+
+function closemenu(){
+    sidemenu.style.right = "-200px";
 }
